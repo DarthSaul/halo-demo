@@ -6,7 +6,7 @@
         <RouterLink
           v-for="cat in CATEGORIES"
           :key="cat.slug"
-          :to="`/category/${cat.slug}`"
+          :to="`/${cat.slug}`"
           class="category-card"
         >
           <span class="category-icon">{{ cat.icon }}</span>

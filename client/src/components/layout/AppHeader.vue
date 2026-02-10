@@ -7,15 +7,7 @@
       </RouterLink>
 
       <nav class="nav-desktop">
-        <RouterLink
-          v-for="cat in CATEGORIES"
-          :key="cat.slug"
-          :to="`/category/${cat.slug}`"
-          class="nav-link"
-        >
-          {{ cat.name }}
-        </RouterLink>
-        <RouterLink to="/favorites" class="nav-link nav-link--favorites">
+        <RouterLink to="/favorites" class="nav-link">
           Favorites
         </RouterLink>
       </nav>
@@ -30,14 +22,6 @@
     <div v-if="mobileOpen" class="nav-mobile" @click="mobileOpen = false">
       <nav class="nav-mobile-inner">
         <RouterLink to="/" class="nav-mobile-link">Home</RouterLink>
-        <RouterLink
-          v-for="cat in CATEGORIES"
-          :key="cat.slug"
-          :to="`/category/${cat.slug}`"
-          class="nav-mobile-link"
-        >
-          {{ cat.name }}
-        </RouterLink>
         <RouterLink to="/favorites" class="nav-mobile-link">Favorites</RouterLink>
       </nav>
     </div>
@@ -46,7 +30,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { CATEGORIES } from '@/types'
 
 const mobileOpen = ref(false)
 </script>
