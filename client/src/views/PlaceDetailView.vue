@@ -9,7 +9,7 @@
       </div>
 
       <template v-else-if="place">
-        <RouterLink :to="`/category/${place.category}`" class="back-link">
+        <RouterLink :to="`/${place.category}`" class="back-link">
           &larr; Back to {{ categoryName }}
         </RouterLink>
 

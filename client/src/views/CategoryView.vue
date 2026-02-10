@@ -2,7 +2,6 @@
   <div class="category-view">
     <div class="container">
       <div class="category-header">
-        <RouterLink to="/" class="back-link">&larr; Back to Home</RouterLink>
         <h1 class="category-title">{{ categoryInfo?.name }}</h1>
         <p class="category-desc">{{ categoryInfo?.description }}</p>
       </div>
@@ -128,18 +127,6 @@ onMounted(fetchData)
 <style scoped>
 .category-view {
   padding: var(--space-2xl) 0;
-}
-
-.back-link {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: var(--space-md);
-}
-
-.back-link:hover {
-  color: var(--color-primary);
 }
 
 .category-header {

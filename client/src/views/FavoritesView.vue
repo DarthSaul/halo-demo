@@ -1,7 +1,6 @@
 <template>
   <div class="favorites-view">
     <div class="container">
-      <RouterLink to="/" class="back-link">&larr; Back to Home</RouterLink>
       <h1 class="page-title">Your Favorites</h1>
       <p class="page-subtitle">
         Your saved spots and routes for race weekend.
@@ -76,18 +75,6 @@ onMounted(async () => {
 <style scoped>
 .favorites-view {
   padding: var(--space-2xl) 0;
-}
-
-.back-link {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: var(--space-md);
-}
-
-.back-link:hover {
-  color: var(--color-primary);
 }
 
 .page-title {

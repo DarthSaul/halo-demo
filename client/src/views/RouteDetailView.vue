@@ -9,7 +9,7 @@
       </div>
 
       <template v-else-if="route">
-        <RouterLink to="/category/running-routes" class="back-link">
+        <RouterLink to="/running-routes" class="back-link">
           &larr; Back to Running Routes
         </RouterLink>
 
