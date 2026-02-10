@@ -1,55 +1,67 @@
 :root {
-  /* Colors */
-  --color-primary: #c4161c;
-  --color-primary-dark: #9e1217;
-  --color-secondary: #1a1a2e;
-  --color-accent: #e94560;
-  --color-bg: #ffffff;
-  --color-bg-alt: #f8f9fa;
-  --color-bg-card: #ffffff;
-  --color-text: #1a1a2e;
-  --color-text-secondary: #6c757d;
-  --color-text-light: #adb5bd;
-  --color-border: #e9ecef;
-  --color-success: #28a745;
-  --color-warning: #ffc107;
-  --color-favorite: #e94560;
+	/* Colors - Base */
 
-  /* Typography */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  --font-family-heading: 'Helvetica Neue', Arial, sans-serif;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.5rem;
+	/* --color-primary: #5D6B65; */
+	--color-primary-hover: #badbc8;
+	--color-green: #19312c;
+	--color-green-light: #465f51;
+	--color-beige: #f2dcce;
+	--color-beige-light: #fdf3ec;
+	--color-slate-50: oklch(0.984 0.003 247.858);
 
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+	/* Colors - Semantic */
+	--color-primary: #c4161c;
+	--color-primary-dark: #9e1217;
+	--color-secondary: var(--color-green);
+	--color-accent: #e94560;
+	--color-bg: #ffffff;
+	--color-bg-alt: #f8f9fa;
+	--color-bg-card: #ffffff;
+	--color-text: #1a1a2e;
+	--color-text-secondary: #6c757d;
+	--color-text-light: #adb5bd;
+	--color-border: #e9ecef;
+	--color-success: #28a745;
+	--color-warning: #ffc107;
+	--color-favorite: #e94560;
+	--color-muted: #ececf0;
 
-  /* Layout */
-  --max-width: 1200px;
-  --header-height: 64px;
-  --border-radius: 8px;
-  --border-radius-sm: 4px;
-  --border-radius-lg: 12px;
+	/* Typography */
+	--font-family:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	--font-family-heading: 'Helvetica Neue', Arial, sans-serif;
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-base: 1rem;
+	--font-size-lg: 1.125rem;
+	--font-size-xl: 1.25rem;
+	--font-size-2xl: 1.5rem;
+	--font-size-3xl: 2rem;
+	--font-size-4xl: 2.5rem;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+	/* Spacing */
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2rem;
+	--space-2xl: 3rem;
+	--space-3xl: 4rem;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
+	/* Layout */
+	--max-width: 1200px;
+	--header-height: 64px;
+	--border-radius: 8px;
+	--border-radius-sm: 4px;
+	--border-radius-lg: 12px;
+
+	/* Shadows */
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+	/* Transitions */
+	--transition-fast: 150ms ease;
+	--transition-base: 250ms ease;
 }
