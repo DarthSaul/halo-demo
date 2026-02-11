@@ -20,9 +20,16 @@
 
 <style scoped>
 .hero {
-	background: var(--color-secondary);
+	background:
+		linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.4) 0%,
+			rgba(0, 0, 0, 0.95) 100%
+		),
+		url('https://images.unsplash.com/photo-1667917796503-b1dbf8abced0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXclMjB5b3JrJTIwbWFyYXRob24lMjBydW5uZXJzfGVufDF8fHx8MTc2MTM1Mjk5N3ww&ixlib=rb-4.1.0&q=80&w=1080')
+			center / cover no-repeat;
 	color: #fff;
-	padding: var(--space-3xl) 0;
+	padding: 10rem 0;
 }
 
 .hero-content {
