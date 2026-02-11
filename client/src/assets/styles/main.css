@@ -18,7 +18,14 @@ html {
 body {
 	font-family: var(--font-family);
 	color: var(--color-text);
-	background-color: var(--color-bg);
+	background: linear-gradient(
+		to bottom,
+		var(--color-secondary) 0%,
+		var(--color-secondary) 50%,
+		var(--color-slate-50) 50%,
+		var(--color-slate-50) 100%
+	);
+	background-attachment: fixed;
 	line-height: 1.6;
 }
 
@@ -74,7 +81,8 @@ select {
 }
 
 /* App shell */
-#app {
+#app,
+#app-shell {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -82,5 +90,7 @@ select {
 
 .main-content {
 	flex: 1;
+	display: flex;
+	flex-direction: column;
 	padding-top: var(--header-height);
 }

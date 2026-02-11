@@ -21,7 +21,7 @@ import TabBar from '@/components/layout/TabBar.vue'
 .tabbed-layout {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  flex: 1;
 }
 
 .tab-content {

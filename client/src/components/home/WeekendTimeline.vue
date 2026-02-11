@@ -90,8 +90,7 @@ const timeline = [
 
 <style scoped>
 .timeline-section {
-	padding: var(--space-3xl) 0;
-	/* background: var(--color-bg-alt); */
+	padding: var(--space-md) 0;
 	background: var(--color-slate-50);
 }
 

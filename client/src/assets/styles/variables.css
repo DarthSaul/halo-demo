@@ -5,6 +5,8 @@
 	--color-primary-hover: #badbc8;
 	--color-green: #19312c;
 	--color-green-light: #465f51;
+	--color-green-light-2: rgba(149, 163, 155, 0.116);
+	--color-green-accent: #9acf5f;
 	--color-beige: #f2dcce;
 	--color-beige-light: #fdf3ec;
 	--color-slate-50: oklch(0.984 0.003 247.858);
@@ -19,6 +21,7 @@
 	--color-bg-card: #ffffff;
 	--color-text: #1a1a2e;
 	--color-text-secondary: #6c757d;
+	--color-text-secondary-darker: #495057;
 	--color-text-light: #adb5bd;
 	--color-border: #e9ecef;
 	--color-success: #28a745;
@@ -48,12 +51,13 @@
 	--space-xl: 2rem;
 	--space-2xl: 3rem;
 	--space-3xl: 4rem;
+	--space-4xl: 5rem;
 
 	/* Layout */
 	--max-width: 1200px;
 	--header-height: 64px;
-	--border-radius: 8px;
 	--border-radius-sm: 4px;
+	--border-radius: 8px;
 	--border-radius-lg: 12px;
 
 	/* Shadows */

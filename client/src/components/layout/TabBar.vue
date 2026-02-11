@@ -33,7 +33,7 @@ const route = useRoute();
 const currentTab = computed(() => route.meta.tab as string);
 
 const tabs = [
-	{ id: 'overview', label: 'Overview', to: '/', icon: null },
+	{ id: 'overview', label: 'Overview', to: '/', icon: '🚀' },
 	{
 		id: 'restaurants',
 		label: 'Restaurants',
@@ -58,7 +58,6 @@ const tabs = [
 		to: '/running-routes',
 		icon: '🏃',
 	},
-	{ id: 'favorites', label: 'Favorites', to: '/favorites', icon: '♡' },
 ];
 </script>
 
@@ -73,13 +72,14 @@ const tabs = [
 
 .tab-bar-inner {
 	display: flex;
+	justify-content: space-between;
 	gap: var(--space-sm);
 	overflow-x: auto;
 	white-space: nowrap;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	background-color: var(--color-muted);
-	border-radius: 20px;
+	border-radius: var(--space-xl);
 	padding: var(--space-sm);
 }
 
@@ -90,17 +90,16 @@ const tabs = [
 .tab-link {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: var(--space-xs);
 	padding: var(--space-sm) var(--space-xl);
 	font-size: var(--font-size-sm);
 	font-weight: 600;
-	/* color: var(--color-text-secondary); */
 	color: black;
 	text-decoration: none;
-	/* border-bottom: 2px solid transparent; */
 	transition: all var(--transition-fast);
-	flex-shrink: 0;
-	border-radius: 20px;
+	flex: 1;
+	border-radius: var(--space-xl);
 }
 
 .tab-link:hover {
