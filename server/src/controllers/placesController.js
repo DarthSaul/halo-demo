@@ -8,6 +8,7 @@ exports.list = async (req, res, next) => {
       price_level,
       tags,
       q,
+      city,
       page = 1,
       per_page = 20,
     } = req.query
@@ -38,6 +39,10 @@ exports.list = async (req, res, next) => {
         `to_tsvector('english', name || ' ' || description || ' ' || neighborhood) @@ plainto_tsquery('english', $${paramIndex++})`
       )
       params.push(q)
+    }
+    if (city) {
+      conditions.push(`city = $${paramIndex++}`)
+      params.push(city)
     }
 
     const where =

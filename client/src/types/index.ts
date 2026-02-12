@@ -46,6 +46,14 @@ export interface FavoriteItem {
 	item_id: number;
 }
 
+export interface City {
+	id: number;
+	name: string;
+	slug: string;
+	status: 'generating' | 'ready' | 'error';
+	created_at: string;
+}
+
 export interface ApiResponse<T> {
 	data: T;
 	meta?: {

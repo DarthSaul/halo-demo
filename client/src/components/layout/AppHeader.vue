@@ -13,6 +13,9 @@
 				<RouterLink to="/favorites" class="nav-link">
 					Favorites
 				</RouterLink>
+				<RouterLink to="/generate-guide" class="nav-link">
+					AI Guide
+				</RouterLink>
 			</nav>
 
 			<button
@@ -39,6 +42,11 @@
 					to="/favorites"
 					class="nav-mobile-link"
 					>Favorites</RouterLink
+				>
+				<RouterLink
+					to="/generate-guide"
+					class="nav-mobile-link"
+					>AI Guide</RouterLink
 				>
 			</nav>
 		</div>

@@ -1,5 +1,8 @@
 -- Clear existing seed data
-TRUNCATE places, running_routes, favorites RESTART IDENTITY CASCADE;
+TRUNCATE places, running_routes, favorites, cities RESTART IDENTITY CASCADE;
+
+-- Seed default city
+INSERT INTO cities (name, slug, status) VALUES ('Los Angeles', 'los-angeles', 'ready');
 
 -- ============================================================
 -- RESTAURANTS
