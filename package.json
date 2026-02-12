@@ -11,7 +11,8 @@
     "db:migrate": "cd server && npm run db:migrate",
     "db:seed": "cd server && npm run db:seed",
     "db:reset": "cd server && npm run db:reset",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "start": "cd server && npm start"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"
