@@ -109,7 +109,6 @@ const tabs = [
 
 .tab-link--active {
 	color: var(--color-primary);
-	/* border-bottom-color: var(--color-primary); */
 	background-color: var(--color-bg-alt);
 }
 

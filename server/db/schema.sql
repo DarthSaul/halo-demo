@@ -1,3 +1,20 @@
+-- Drop existing tables to allow schema changes (dev only)
+DROP TABLE IF EXISTS favorites CASCADE;
+DROP TABLE IF EXISTS sessions CASCADE;
+DROP TABLE IF EXISTS running_routes CASCADE;
+DROP TABLE IF EXISTS places CASCADE;
+DROP TABLE IF EXISTS cities CASCADE;
+
+-- Cities (generated guides)
+CREATE TABLE IF NOT EXISTS cities (
+    id              SERIAL PRIMARY KEY,
+    name            VARCHAR(255) NOT NULL UNIQUE,
+    slug            VARCHAR(255) NOT NULL UNIQUE,
+    status          VARCHAR(20) NOT NULL DEFAULT 'generating'
+                    CHECK (status IN ('generating', 'ready', 'error')),
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Places: restaurants, coffee shops, running stores
 CREATE TABLE IF NOT EXISTS places (
     id              SERIAL PRIMARY KEY,
@@ -11,6 +28,7 @@ CREATE TABLE IF NOT EXISTS places (
     hours           VARCHAR(255),
     website         VARCHAR(500),
     image_url       VARCHAR(500),
+    city            VARCHAR(255) NOT NULL DEFAULT 'Los Angeles',
     created_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -27,6 +45,7 @@ CREATE TABLE IF NOT EXISTS running_routes (
     tags            TEXT[] DEFAULT '{}',
     start_point     VARCHAR(500) NOT NULL,
     image_url       VARCHAR(500),
+    city            VARCHAR(255) NOT NULL DEFAULT 'Los Angeles',
     created_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -54,6 +73,11 @@ CREATE INDEX IF NOT EXISTS idx_running_routes_difficulty ON running_routes(diffi
 CREATE INDEX IF NOT EXISTS idx_running_routes_tags ON running_routes USING GIN(tags);
 CREATE INDEX IF NOT EXISTS idx_favorites_session ON favorites(session_id);
 CREATE INDEX IF NOT EXISTS idx_favorites_item ON favorites(item_type, item_id);
+
+-- City indexes
+CREATE INDEX IF NOT EXISTS idx_places_city ON places(city);
+CREATE INDEX IF NOT EXISTS idx_running_routes_city ON running_routes(city);
+CREATE INDEX IF NOT EXISTS idx_cities_slug ON cities(slug);
 
 -- Full-text search indexes
 CREATE INDEX IF NOT EXISTS idx_places_search ON places USING GIN(

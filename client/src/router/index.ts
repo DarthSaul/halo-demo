@@ -52,6 +52,11 @@ const routes: RouteRecordRaw[] = [
 
   // Full-page routes (no hero/tabs)
   {
+    path: '/generate-guide',
+    name: 'generate-guide',
+    component: () => import('@/views/GenerateGuideView.vue'),
+  },
+  {
     path: '/places/:id',
     name: 'place-detail',
     component: () => import('@/views/PlaceDetailView.vue'),
