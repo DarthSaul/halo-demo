@@ -29,16 +29,25 @@
 }
 .milestones {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	gap: var(--space-3xl);
 	margin-top: var(--space-md);
 }
+@media (max-width: 600px) {
+	.milestones {
+		flex-direction: column;
+		gap: var(--space-md);
+	}
+	.milestone-item {
+		flex: 1 1 100%;
+	}
+}
 .milestone-item {
-	width: 100%;
+	flex: 1 1 auto;
 }
 .milestone-title {
 	font-weight: 700;
 	color: var(--color-green);
-	/* font-size: var(--font-size-base); */
 }
 </style>
