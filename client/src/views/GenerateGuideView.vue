@@ -6,7 +6,7 @@
 				<h1 class="guide-title">
 					AI-Powered City Guide Generator
 				</h1>
-				<p class="guide-subtitle">
+				<p class="guide-subtitle mb-xl">
 					Generate a marathon runner's guide for
 					any major city. Type the city name and
 					our platform will generate a

@@ -1,4 +1,42 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const isExpanded = ref(false);
+
+function onBeforeEnter(el: Element) {
+	const htmlEl = el as HTMLElement;
+	htmlEl.style.maxHeight = '0';
+	htmlEl.style.opacity = '0';
+	htmlEl.style.overflow = 'hidden';
+}
+
+function onEnter(el: Element, done: () => void) {
+	const htmlEl = el as HTMLElement;
+	htmlEl.style.transition = 'max-height 0.35s ease, opacity 0.3s ease';
+	htmlEl.style.maxHeight = htmlEl.scrollHeight + 'px';
+	htmlEl.style.opacity = '1';
+	htmlEl.addEventListener('transitionend', done, { once: true });
+}
+
+function onAfterEnter(el: Element) {
+	const htmlEl = el as HTMLElement;
+	htmlEl.style.maxHeight = '';
+	htmlEl.style.overflow = '';
+	htmlEl.style.transition = '';
+}
+
+function onLeave(el: Element, done: () => void) {
+	const htmlEl = el as HTMLElement;
+	htmlEl.style.overflow = 'hidden';
+	htmlEl.style.maxHeight = htmlEl.scrollHeight + 'px';
+	htmlEl.style.transition = 'max-height 0.35s ease, opacity 0.3s ease';
+	requestAnimationFrame(() => {
+		htmlEl.style.maxHeight = '0';
+		htmlEl.style.opacity = '0';
+	});
+	htmlEl.addEventListener('transitionend', done, { once: true });
+}
+
 const timeline = [
 	{
 		day: 'Thursday',
@@ -37,12 +75,27 @@ const timeline = [
 	<section class="timeline-section">
 		<div class="container">
 			<div class="timeline-inner">
-				<h2 class="section-title">Your Race Weekend</h2>
-				<p class="section-subtitle">
-					A quick look at the key moments
-					throughout marathon weekend.
-				</p>
-				<div class="timeline">
+				<div class="timeline-header" @click="isExpanded = !isExpanded">
+					<div class="title-row">
+						<h2 class="section-title">Your Race Weekend</h2>
+						<button class="toggle-btn" :class="{ expanded: isExpanded }" aria-label="Toggle timeline">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</button>
+					</div>
+					<p class="section-subtitle">
+						A quick look at the key moments
+						throughout marathon weekend.
+					</p>
+				</div>
+				<Transition
+					@before-enter="onBeforeEnter"
+					@enter="onEnter"
+					@after-enter="onAfterEnter"
+					@leave="onLeave"
+				>
+				<div v-if="isExpanded" class="timeline">
 					<div
 						v-for="(item, i) in timeline"
 						:key="i"
@@ -83,6 +136,7 @@ const timeline = [
 						</div>
 					</div>
 				</div>
+			</Transition>
 			</div>
 		</div>
 	</section>
@@ -106,16 +160,45 @@ const timeline = [
 	font-weight: 700;
 }
 
+.timeline-header {
+	cursor: pointer;
+	user-select: none;
+}
+
+.title-row {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xl);
+}
+
+.toggle-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--color-text-secondary);
+	padding: 0;
+	flex-shrink: 0;
+	transition: transform 0.2s ease;
+}
+
+.toggle-btn.expanded {
+	transform: rotate(180deg);
+}
+
 .section-subtitle {
 	font-size: var(--font-size-base);
 	color: var(--color-text-secondary);
 	margin-top: var(--space-sm);
-	margin-bottom: var(--space-2xl);
+	margin-bottom: 0;
 }
 
 .timeline {
 	display: flex;
 	flex-direction: column;
+	margin-top: var(--space-2xl);
 }
 
 .timeline-item {
