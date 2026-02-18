@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import CategoryGrid from '@/components/home/CategoryGrid.vue'
-// import WeekendTimeline from '@/components/home/WeekendTimeline.vue';
+import WeekendTimeline from '@/components/home/WeekendTimeline.vue';
 import MarathonOverview from '@/components/home/MarathonOverview.vue';
 import BrandBanner from '@/components/home/BrandBanner.vue';
 </script>
@@ -9,6 +9,7 @@ import BrandBanner from '@/components/home/BrandBanner.vue';
 	<div class="overview">
 		<!-- <CategoryGrid /> -->
 		<MarathonOverview />
+		<WeekendTimeline />
 		<BrandBanner />
 	</div>
 </template>

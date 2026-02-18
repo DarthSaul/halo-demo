@@ -107,6 +107,7 @@ async function fetchData() {
 		const params = new URLSearchParams();
 
 		if (searchQuery.value) params.set('q', searchQuery.value);
+		params.set('city', 'Los Angeles');
 
 		Object.entries(activeFilters.value).forEach(([key, value]) => {
 			params.set(key, value);

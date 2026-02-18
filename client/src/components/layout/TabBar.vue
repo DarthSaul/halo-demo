@@ -81,6 +81,7 @@ const tabs = [
 	background-color: var(--color-muted);
 	border-radius: var(--space-xl);
 	padding: var(--space-sm);
+	border: 2px solid var(--color-border);
 }
 
 .tab-bar-inner::-webkit-scrollbar {
@@ -117,9 +118,14 @@ const tabs = [
 }
 
 @media (max-width: 768px) {
+	.tab-bar-inner {
+		border-radius: var(--space-md);
+	}
+
 	.tab-link {
 		padding: var(--space-sm) var(--space-md);
 		font-size: var(--font-size-xs);
+		border-radius: var(--space-md);
 	}
 }
 </style>
